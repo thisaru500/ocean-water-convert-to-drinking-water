@@ -143,3 +143,47 @@ void humidity(){
     delay(5);
 
   }
+   else if (ul == HIGH && ll == LOW){
+    
+    digitalWrite(9, LOW);
+    digitalWrite(8, HIGH);
+    
+    Serial.println("Motor Off");
+    Serial.println("loop4");
+    Serial.println("Error the tank has some fault please cheak it");
+    
+    }
+
+    
+  else if (digitalRead(10) == HIGH && ul == HIGH) {
+    
+    digitalWrite(9, LOW);
+    digitalWrite(8, LOW);
+    
+    Serial.println("Motor Off");    
+    Serial.println("loop2");
+
+    delay(5);
+
+  }
+  
+  else if (digitalRead(10) == LOW && ll == LOW) {
+
+    digitalWrite(9, HIGH);
+    digitalWrite(8, LOW);
+
+    Serial.println("Motor On");
+    Serial.println("loop3");
+
+    delay(5);
+  }
+
+ 
+
+  Serial.print("UL = ");  Serial.print(ul); Serial.print(" "); Serial.print("ll ="); Serial.println(ll);
+  
+  Serial.println("*************************");
+  delay(1000); //Collecting period should be : >1.7 second
+  }
+
+  
