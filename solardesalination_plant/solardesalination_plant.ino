@@ -108,3 +108,16 @@ void humidity(){
     Serial.println(" Celsius");
 
  }
+  void tempsen() {
+  sensors.requestTemperatures();
+
+  Celsius = sensors.getTempCByIndex(0);
+  Fahrenheit = sensors.toFahrenheit(Celsius);
+
+  Serial.print(Celsius);
+  Serial.println(" C  ");
+  Serial.print(Fahrenheit);
+  Serial.println(" F");
+
+  delay(1000);
+}
