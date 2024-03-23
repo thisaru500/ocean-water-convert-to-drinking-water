@@ -84,3 +84,27 @@ void ultrasonic() {
 
   
 }
+
+void humidity(){
+    // Wait a few seconds between measurements
+    delay(2000);
+
+    // Reading temperature or humidity takes about 250 milliseconds!
+    // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
+    hum = dht.readHumidity();    // Read humidity value
+    temp = dht.readTemperature();  // Read temperature value
+
+    // Check if any reads failed and exit early (to try again).
+    if (isnan(hum) || isnan(temp)) {
+        Serial.println("Failed to read from DHT sensor!");
+        return;
+    }
+
+    // Print temp and humidity values to serial monitor
+    Serial.print("Humidity: ");
+    Serial.println(hum);
+    Serial.print(" %, Temp: ");
+    Serial.print(temp);
+    Serial.println(" Celsius");
+
+ }
