@@ -121,3 +121,25 @@ void humidity(){
 
   delay(1000);
 }
+ void loop(){
+  ultrasonic();
+  humidity();
+  tempsen();
+
+  if(relay == HIGH){
+    Serial.println("Motor is turn on");
+    digitalWrite(14,HIGH);
+    }
+     int ul = digitalRead(11); 
+  int ll = digitalRead(12);
+  
+  if (digitalRead(10) == LOW && ul == LOW && ll == LOW) {
+
+    digitalWrite(9, HIGH);
+    digitalWrite(8, LOW);
+    
+    Serial.println("motor on");
+    Serial.println("loop1");
+    delay(5);
+
+  }
